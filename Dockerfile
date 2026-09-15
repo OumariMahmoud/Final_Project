@@ -8,6 +8,10 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
+RUN useradd --create-home appuser
+
+USER appuser
+
 EXPOSE 8080
 
 ENV FLASK_APP=service
